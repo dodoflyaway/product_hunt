@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+
+{% if error %}
+{{ error }}
+<br />
+<br />
+{% endif %}
+
+<h1> create </h1>
+<br/>
+<form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+
+{% csrf_token %}
+Title:
+<br />
+<input type="text" name="title"/>
+<br />
+Body:
+<br />
+<input type="textbox" name="body"/>
+<br />
+<br />
+
+<input  class="btn btn-primary" type="submit" value="Sign Up!" />
+
+
+</form>
+{% endblock %}
