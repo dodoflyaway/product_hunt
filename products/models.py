@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class product(models.Model):
+class Product(models.Model):
     title = models.CharField(max_length=250)
     pub_date = models.DateTimeField()
     body = models.TextField()
@@ -10,6 +10,9 @@ class product(models.Model):
     icon = models.ImageField(upload_to='images/')
     votes_total = models.IntegerField(default=1)
     hunter = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+
 
 
 
