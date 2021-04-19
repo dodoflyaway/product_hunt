@@ -3,10 +3,24 @@
 
 {% block content%}
 
- <h3>HOME PAGE HOPE PAGE </h3>
+{% for  product in products.all %}
 
- <p>home</p>
+<div class="row">
+  <div class="col-2">
+    <img src="{{ product.image.url }}" class="img-fluid" />
+  </div>
+  <div class="col-6"
 
+    <h1> {{ product.title }} </h1>
+    <p> {{ product.summary }} </p>
+
+  </div>
+  <div class="col-4">
+
+  </div>
+</div>
+
+{% endfor %}
 
 
 {% endblock %}
